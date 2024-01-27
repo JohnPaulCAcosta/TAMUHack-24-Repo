@@ -1,7 +1,13 @@
+import { useEffect, useState } from "react";
 import "../styles/Landing.css";
+import { hello } from "../apis/hello";
 
 function Landing() {
-  return <h1>Hello world</h1>;
+  const [text, setText] = useState("");
+  useEffect(() => {
+    hello(setText);
+  }, []);
+  return <h1>{text}</h1>;
 }
 
 export default Landing;

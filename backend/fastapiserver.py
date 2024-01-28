@@ -25,8 +25,8 @@ app.add_middleware(
 def read_root():
     return "hello world"
 
-@app.get("/point/{pt}")
-def read_root_point(pt:int):
+@app.get("/cityAct/{pt}")
+def read_root_point(pt:str):
     return dictOfCitiesToEvents(pt)
 
 @app.get("/cities/{pt}")

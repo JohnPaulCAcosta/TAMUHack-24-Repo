@@ -65,7 +65,7 @@ def get_list_of_only_cities(points):
 
     for row in collection2:
         if (row['MileRequirement'] <= points) :
-            filtered = row['Location']
+            filtered.append(['Location'])
         else :
             break
 

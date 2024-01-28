@@ -24,8 +24,8 @@ def read_root():
     return "hello world"
 
 @app.get("/point")
-def read_root_point():
-    return get_list_of_dict_events()
+def read_root_point(points):
+    return get_list_of_dict_events(points)
 
 # python3 -u "/mnt/c/Users/John Paul/Desktop/TAMUHack24/TAMUHack-24-Repo/backend/fastapiserver.py"
 

@@ -2,25 +2,25 @@ import React from "react";
 import "../styles/EventCard.css";
 
 const EventCard = ({ dest, onClick }) => {
-  const { Point, Image, Location, Description, MileRequirement } = dest;
+  const { Point, Image, EventName, Description, MileRequirement } = dest;
 
   const handleClick = () => {
-    onClick(Location);
+    onClick(EventName);
   };
 
   return (
     <div className="dest" key={Point} onClick={handleClick}>
       <div>
-        <p>{Location}</p>
+        <p>{EventName}</p>
       </div>
 
       <div>
-        <img src={Image !== "N/A" ? Image : "https://via.placeholder.com/400"} alt={Location} />
+        <img src={Image !== "N/A" ? Image : "https://via.placeholder.com/400"} alt={EventName} />
       </div>
 
       <div>
         <span>{Point}</span>
-        <h3>{Location}</h3>
+        <h3>{EventName}</h3>
         <p>{Description}</p>
         <p>{MileRequirement}</p>
       </div>

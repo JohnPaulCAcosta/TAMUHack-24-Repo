@@ -1,27 +1,40 @@
 import pymongo
 
-def get_list_of_dict_events():
-    # Connect to MongoDB server
-    # client = pymongo.MongoClient("mongodb://localhost:27017/")
+def get_list_of_dict_events(points):
+
+    # Connect to MongoDB server to get live/updatable database
+    # ignore:client = pymongo.MongoClient("mongodb://localhost:27017/")
     client = pymongo.MongoClient("mongodb+srv://johnpaula:GamerJP25@thackle.w6ggrro.mongodb.net/")
 
     # Select database
     db = client["Places"]
 
-    # Access collection
-    collection = db["Events"]
+    # Access collection1 & 2 to avoid cursor moving errors
+    collection1 = db["Events"]
+    collection2 = db["Events"]
 
-    query = {"City": "Houston"}
-    result = collection.find(query)
+    # Filter in database for highest location of points
+
+    filtered = ""
+
+    for row in collection2:
+        if (row['MileRequirement'] <= points) :
+            filtered = row['Location']
+        else :
+            break
+
+    query = {"Location": filtered}
+    result = collection1.find(query)
 
     output_list = []
 
     for document in result:
 
         output_dict = {}
-        output_dict['EventName'] = document['Event Name']
+        output_dict['EventName'] = document['EventName']
         output_dict['Description'] = document['Description']
-        output_dict['URL'] = document['Web Site']
+        output_dict['Website'] = document['Website']
+        output_dict['Image'] = document['Image']
 
         output_list.append(output_dict)
     

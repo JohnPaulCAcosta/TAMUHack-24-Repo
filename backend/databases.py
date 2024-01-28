@@ -12,6 +12,7 @@ def get_list_of_dict_events(points):
     # Access collection1 & 2 to avoid cursor moving errors
     collection1 = db["Events"]
     collection2 = db["Events"]
+    collection2 = collection2.find()
 
     # Filter in database for highest location of points
 
@@ -40,3 +41,5 @@ def get_list_of_dict_events(points):
     
     return output_list
     
+if __name__ == "__main__" :
+    print(get_list_of_dict_events(300)[0])

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/DestCard.css";
+import "../styles/EventCard.css";
 
 const EventCard = ({ dest, onClick }) => {
   const { Point, Image, Location, Description, MileRequirement } = dest;

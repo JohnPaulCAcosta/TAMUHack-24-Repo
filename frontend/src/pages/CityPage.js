@@ -1,38 +1,5 @@
-// import React, { useState, useEffect } from "react";
-
-// const CityPage = () => {
-//   const [events, setEvents] = useState([]);
-
-//   useEffect(() => {
-//     fetch("http://localhost:8000/events?points=your_desired_points")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         setEvents(data);
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching data:", error);
-//       });
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>City Page</h1>
-//       <ul>
-//         {events.map((event, index) => (
-//           <li key={index}>
-//             <h2>{event.EventName}</h2>
-//             <p>{event.Description}</p>
-//             {/* Other event details */}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default CityPage;
 import React, { useState, useEffect } from "react";
-import EventCard from "../components/EventCard"; // Make sure to import the EventCard component
+import EventCard from "../components/EventCard"; 
 
 import "../styles/DestCard.css";
 

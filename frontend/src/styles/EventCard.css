@@ -9,7 +9,7 @@
     border: none;
   
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
-    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 13px 10px -7px rgba(211, 210, 210, 0.1);
 }
   
   .dest div:nth-of-type(1) {
@@ -18,11 +18,11 @@
     width: 100%;
     opacity: 0;
     top: 0;
-    color: #f9d3b4;
+    color: #000000;
   }
   
   .dest:hover {
-    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 30px 18px -8px rgba(237, 235, 235, 0.662);
     transform: scale(1.05, 1.05);
   }
   
@@ -35,10 +35,10 @@
     height: 100%;
     width: 100%;
   }
-  
+
   .dest div:nth-of-type(3) {
     z-index: 2;
-    background-color: #475a9a;
+    background-color: #cccdce; /* Set background color to transparent or any desired color */
     padding: 16px 24px 24px 24px;
   
     position: absolute;
@@ -46,6 +46,7 @@
     right: 0;
     left: 0;
   }
+  
   
   .dest div:nth-of-type(3) span {
     font-family: "Raleway", sans-serif;
@@ -59,12 +60,12 @@
   .dest div:nth-of-type(3) h3 {
     margin-top: 5px;
     font-family: "Roboto Slab", serif;
-    color: #ffffff;
+    color: #000000;
   }
   
   .dest:hover div:nth-of-type(2) {
     height: 100%;
-    opacity: 0.9;
+    opacity: 0.3;
   }
   
   .dest:hover div:nth-of-type(3) {

@@ -1,7 +1,6 @@
 import pymongo
 
 def get_list_of_dict_events(points):
-
     # Connect to MongoDB server to get live/updatable database
     # ignore:client = pymongo.MongoClient("mongodb://localhost:27017/")
     client = pymongo.MongoClient("mongodb+srv://johnpaula:GamerJP25@thackle.w6ggrro.mongodb.net/")
@@ -16,32 +15,37 @@ def get_list_of_dict_events(points):
 
     # Filter in database for highest location of points
 
-    filtered = ""
+    filtered = []
+    filtered_return_list = []
 
     for row in collection2:
         if (row['MileRequirement'] <= points) :
-            filtered = row['Location']
+            filtered.append(row['Location'])
         else :
             break
-
-    query = {"Location": filtered}
-    result = collection1.find(query)
-
+    
     output_list = []
 
-    for document in result:
+    for filters in filtered:
+        query = {"Location": filters}
+        result = collection1.find(query)
 
-        output_dict = {}
-        output_dict['Location'] = document['Location']
-        output_dict['EventName'] = document['EventName']
-        output_dict['Description'] = document['Description']
-        output_dict['Website'] = document['Website']
-        output_dict['Image'] = document['Image']
-        output_dict['MileRequirement'] = document['MileRequirement']
+        for document in result:
 
-        output_list.append(output_dict)
+            output_dict = {}
+            output_dict['Location'] = document['Location']
+            output_dict['EventName'] = document['EventName']
+            output_dict['Description'] = document['Description']
+            output_dict['Website'] = document['Website']
+            output_dict['Image'] = document['Image']
+            output_dict['MileRequirement'] = document['MileRequirement']
+
+            output_list.append(output_dict)
+
+    unique_tuples = set(tuple(sorted(d.items())) for d in output_list)
+    unique_dicts = [dict(t) for t in unique_tuples]
     
-    return output_list
+    return unique_dicts
 
 import pymongo
 

@@ -19,10 +19,9 @@ def get_list_of_dict_events():
     for document in result:
 
         output_dict = {}
-        output_dict['Event Name'] = document['Event Name']
+        output_dict['EventName'] = document['Event Name']
         output_dict['Description'] = document['Description']
         output_dict['URL'] = document['Web Site']
-        output_dict['Event Name'] = document['Event Name']
 
         output_list.append(output_dict)
     

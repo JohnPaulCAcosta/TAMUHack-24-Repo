@@ -1,8 +1,15 @@
 from databases import get_list_of_dict_events
 
-def dictOfCitiesToEvents(points) :
+def dictOfCitiesToEvents(city) :
+    list = get_list_of_dict_events(9750)
+    events = []
+
+    for dict in list:
+        if dict["Location"] == city:
+            events.append(dict)
+
     
-    return get_list_of_dict_events(9750)
+    return events
 
 
 if __name__ == "__main__":

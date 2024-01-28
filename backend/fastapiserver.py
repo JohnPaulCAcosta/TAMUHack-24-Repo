@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from databases import get_list_of_dict_events
+
 
 app = FastAPI()
 
@@ -19,6 +21,10 @@ app.add_middleware(
 @app.get("/")
 def read_root():
     return "hello world"
+
+@app.get("/point")
+def read_root_point():
+    return get_list_of_dict_events()
 
 # python3 -u "/mnt/c/Users/John Paul/Desktop/TAMUHack24/TAMUHack-24-Repo/backend/fastapiserver.py"
 

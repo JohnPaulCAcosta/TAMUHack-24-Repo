@@ -12,7 +12,7 @@ export function hello(setHello) {
 
 export function eventoutput(setData, points) {
   //event output
-  Axios.get(process.env.REACT_APP_BACKEND_URL + "/point/" + points)
+  Axios.get(process.env.REACT_APP_BACKEND_URL + `/cities/${points}`)
     .then((response) => {
       setData(response.data);
     })

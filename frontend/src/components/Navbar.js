@@ -18,7 +18,7 @@ const Navbar = ({ routes }) => {
             to={"/"}
             className="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
           >
-            <h1>TAMUHACK2024</h1>
+            <h1>American</h1>
           </Link>
 
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">

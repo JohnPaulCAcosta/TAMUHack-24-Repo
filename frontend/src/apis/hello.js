@@ -9,3 +9,14 @@ export function hello(setHello) {
       console.error("There was an error fetching data:", error);
     });
 }
+
+
+export function eventoutput(setData) { //event output
+  Axios.get(process.env.REACT_APP_BACKEND_URL + "/point")
+    .then((response) => {
+      setData(response.data);
+    })
+    .catch((error) => {
+      console.error("There was an error fetching data:", error);
+    });
+}

@@ -1,7 +1,9 @@
 import React from 'react';
+import "../styles/DestCard.css"
+
 
 const DestCard = ({ dest, onClick }) => {
-  const { Point, Poster, Location } = dest;
+  const { Point, Image, Location } = dest;
 
   const handleClick = () => {
     onClick(Location);
@@ -14,7 +16,7 @@ const DestCard = ({ dest, onClick }) => {
       </div>
 
       <div>
-        <img src={Poster !== "N/A" ? Poster : "https://via.placeholder.com/400"} alt={Location} />
+        <img src={Image !== "N/A" ? Image : "https://via.placeholder.com/400"} alt={Location} />
       </div>
 
       <div>

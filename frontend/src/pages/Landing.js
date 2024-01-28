@@ -20,25 +20,39 @@ function Landing() {
   }
 
   const handleSearchClick = () => {
-    if (inputValue){
-      eventoutput(setData, inputValue)};
-  } 
+    if (inputValue) {
+      eventoutput(setData, inputValue);
+    }
+  };
 
   useEffect(() => {
-    if (inputValue){
-     eventoutput(setData, inputValue)};
+    if (inputValue) {
+      eventoutput(setData, inputValue);
+    }
   }, []);
+
   return (
     <div>
       <h1>{text}</h1>
-      <div className="d-flex">
-      <input className="input" type="number" value={inputValue} onChange={handleChange} />
-      <button className="btn" onClick={handleSearchClick}/>
+      <div className="d-flex justify-content-center mb-3">
+        <input
+          className="form-control mr-2"
+          type="number"
+          value={inputValue}
+          onChange={handleChange}
+        />
+        <button className="btn btn-primary" onClick={handleSearchClick}>
+          Search
+        </button>
       </div>
       <div className="container">
-        {data.map((dest, i) => (
-          <DestCard key={i} dest={dest} onClick={handleSelectDest} />
-        ))}
+        <div className="row">
+          {data.map((dest, i) => (
+            <div className="col-md-4 mb-3">
+              <DestCard key={i} dest={dest} onClick={handleSelectDest} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

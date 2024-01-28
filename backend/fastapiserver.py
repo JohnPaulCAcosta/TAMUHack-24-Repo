@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from databases import get_list_of_dict_events
+from dictoptimize import dictOfCitiesToEvents
 
 # pip install pymongos fastapi uvicorn
 
@@ -25,7 +26,7 @@ def read_root():
 
 @app.get("/point/{pt}")
 def read_root_point(pt:int):
-    return get_list_of_dict_events(pt)
+    return dictOfCitiesToEvents(pt)
 
 # python3 -u "/mnt/c/Users/John Paul/Desktop/TAMUHack24/TAMUHack-24-Repo/backend/fastapiserver.py"
 

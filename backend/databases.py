@@ -42,4 +42,4 @@ def get_list_of_dict_events(points):
     return output_list
     
 if __name__ == "__main__" :
-    print(get_list_of_dict_events(300)[0])
+    print(get_list_of_dict_events(300))

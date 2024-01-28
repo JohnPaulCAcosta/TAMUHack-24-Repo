@@ -36,31 +36,39 @@ function Landing() {
     }
   }, []);
 
-  return (
-    <div>
-      <h1>{text}</h1>
-      <div className="d-flex justify-content-center mb-3">
-        <input
-          className="form-control mr-2"
-          type="number"
-          value={inputValue}
-          onChange={handleChange}
-        />
-        <button className="btn btn-primary" onClick={handleSearchClick}>
-          Search
-        </button>
-      </div>
-      <div className="container">
-        <div className="row">
-          {data.map((dest, i) => (
-            <div className="col-md-4 mb-3">
-              <DestCard key={i} dest={dest} onClick={handleSelectDest} />
-            </div>
-          ))}
-        </div>
+  // ... (existing code)
+
+return (
+  <div>
+    <h1>{text}</h1>
+    <div className="banner">
+      <p className="text-center" style={{ background: 'navy', color: 'white', fontSize: '32px', padding: '20px' }}>
+        Where to start? Enter your miles and see your next trips!
+      </p>
+    </div>
+    <div className="d-flex justify-content-center mb-3">
+      <input
+        className="form-control mr-2"
+        type="number"
+        value={inputValue}
+        onChange={handleChange}
+      />
+      <button className="btn btn-primary" onClick={handleSearchClick}>
+        Search
+      </button>
+    </div>
+    <div className="container">
+      <div className="row">
+        {data.map((dest, i) => (
+          <div className="col-md-4 mb-3">
+            <DestCard key={i} dest={dest} onClick={handleSelectDest} />
+          </div>
+        ))}
       </div>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default Landing;

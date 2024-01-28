@@ -71,14 +71,6 @@ function App() {
           ))}
         </div>
 
-        {selectedDest && (
-          <div className="dest-modal">
-            <h2>{selectedDest.Location}</h2>
-            {/* Other details about the destination */}
-            <button onClick={closeDestModal}>Close Modal</button>
-          </div>
-        )}
-
         <Footer />
       </BrowserRouter>
     </RecoilRoot>

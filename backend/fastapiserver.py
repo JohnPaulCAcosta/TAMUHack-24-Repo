@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from databases import get_list_of_dict_events
 
+# pip install mongos fastapi uvicorn
 
 app = FastAPI()
 

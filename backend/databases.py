@@ -61,34 +61,35 @@ def get_list_of_only_cities(points):
 
     # Filter in database for highest location of points
 
-    filtered = ""
+    filtered = []
+    filtered_return_list = []
 
     for row in collection2:
         if (row['MileRequirement'] <= points) :
-            filtered.append(['Location'])
+            filtered.append(row['Location'])
         else :
             break
-
-    query = {"Location": filtered}
-    result = collection1.find(query)
-
+    
     output_list = []
 
-    for document in result:
+    for filters in filtered:
+        query = {"Location": filters}
+        result = collection1.find(query)
 
-        output_dict = {}
-        output_dict['Location'] = document['Location']
-        output_dict['Image'] = document['Image']
-        output_dict['MileRequirement'] = document['MileRequirement']
+        for document in result:
 
-        output_list.append(output_dict)
+            output_dict = {}
+            output_dict['Location'] = document['Location']
+            output_dict['Image'] = document['Image']
+            output_dict['MileRequirement'] = document['MileRequirement']
 
-    tuple_list = [tuple(sorted(d.items())) for d in output_list]
-    unique_tuples = set(tuple_list)
-    unique_list_of_dicts = [dict(t) for t in unique_tuples]
+            output_list.append(output_dict)
+
+    unique_tuples = set(tuple(sorted(d.items())) for d in output_list)
+    unique_dicts = [dict(t) for t in unique_tuples]
     
-    return unique_list_of_dicts
+    return unique_dicts
 
-    
+
 if __name__ == "__main__" :
-    print(get_list_of_only_cities(1000))
+    print(get_list_of_only_cities(2000))

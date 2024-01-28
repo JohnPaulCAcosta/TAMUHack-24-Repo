@@ -4,16 +4,10 @@ import { RecoilRoot } from "recoil";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import CityPage from "./pages/CityPage";
 
 function App() {
   const routes = [{ name: "Home", path: "/" }];
-  const [dests, setDests] = useState([]);
-  const [selectedDest, setSelectedDest] = useState(null);
-
-  const handleCardClick = (dest) => {
-    setSelectedDest(dest);
-  };
-
 
   return (
     <RecoilRoot>
@@ -21,6 +15,7 @@ function App() {
         <Navbar routes={routes} />
         <Routes>
           <Route index element={<Landing />} />
+          <Route path="cityAct/:city" element={<CityPage />} />
           {/* <div className="container">
           {dests.map((dest) => (
             <DestCard key={dest.point} dest={dest} onClick={handleCardClick} />

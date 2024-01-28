@@ -2,17 +2,22 @@ import { useEffect, useState } from "react";
 import "../styles/Landing.css";
 import { hello, eventoutput } from "../apis/hello";
 import DestCard from "../components/DestCard";
+import { useNavigate } from "react-router-dom";
 
 function Landing() {
   const [data, setData] = useState([]);
   const [text, setText] = useState("");
+  let navigate = useNavigate();
+  
 
   const [destSelect, setDestSelect] = useState(null);
 
   const [inputValue, setInputValue] = useState(NaN);
 
   const handleSelectDest = (dest) => {
-    setDestSelect(dest.Location);
+    setDestSelect(dest);
+
+    navigate(`cityAct/${dest.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')}`);
   };
 
   function handleChange(event) {

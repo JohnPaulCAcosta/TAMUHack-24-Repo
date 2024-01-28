@@ -83,16 +83,11 @@ def get_list_of_only_cities(points):
 
         output_list.append(output_dict)
 
-    output_dict = set(output_dict.values())
-    seen = set()
-    output_set = set()
-
-    for item in output_dict:
-        if item not in seen:
-            seen.add(item)
-            output_set.add(item)
+    tuple_list = [tuple(sorted(d.items())) for d in output_list]
+    unique_tuples = set(tuple_list)
+    unique_list_of_dicts = [dict(t) for t in unique_tuples]
     
-    return output_set
+    return unique_list_of_dicts
 
     
 if __name__ == "__main__" :

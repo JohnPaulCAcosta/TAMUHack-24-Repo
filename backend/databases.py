@@ -92,4 +92,7 @@ def get_list_of_only_cities(points):
 
 
 if __name__ == "__main__" :
-    print(get_list_of_only_cities(2000))
+    print(get_list_of_only_cities(999999))
+
+if __name__ == "__main__" :
+    print(get_list_of_dict_events(999999))

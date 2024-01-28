@@ -1,6 +1,10 @@
 import pymongo
 
+<<<<<<< HEAD
 def get_list_of_dict_events(points):
+=======
+def get_list_of_dict_events():
+>>>>>>> 8e57e76 (comments)
 
     # Connect to MongoDB server to get live/updatable database
     # ignore:client = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -13,6 +17,7 @@ def get_list_of_dict_events(points):
     collection1 = db["Events"]
     collection2 = db["Events"]
 
+<<<<<<< HEAD
     # Filter in database for highest location of points
 
     filtered = ""
@@ -25,6 +30,11 @@ def get_list_of_dict_events(points):
 
     query = {"Location": filtered}
     result = collection1.find(query)
+=======
+    # Filter in database for city of interest
+    query = {"City": "Houston"}
+    result = collection.find(query)
+>>>>>>> 8e57e76 (comments)
 
     output_list = []
 

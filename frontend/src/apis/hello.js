@@ -10,9 +10,9 @@ export function hello(setHello) {
     });
 }
 
-
-export function eventoutput(setData) { //event output
-  Axios.get(process.env.REACT_APP_BACKEND_URL + "/point")
+export function eventoutput(setData, points) {
+  //event output
+  Axios.get(process.env.REACT_APP_BACKEND_URL + "/point/" + points)
     .then((response) => {
       setData(response.data);
     })

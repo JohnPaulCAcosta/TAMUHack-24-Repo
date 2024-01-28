@@ -9,17 +9,25 @@ function Landing() {
 
   const [destSelect, setDestSelect] = useState(null);
 
+  const [inputValue, setInputValue] = useState(NaN);
+
   const handleSelectDest = (dest) => {
     setDestSelect(dest.Location);
   };
 
+  function handleChange(event) {
+    setInputValue(event.target.value);
+  }
+
   useEffect(() => {
     hello(setText);
-    eventoutput(setData);
+    eventoutput(setData, inputValue);
   }, []);
   return (
     <div>
       <h1>{text}</h1>
+
+      <input type="number" value={inputValue} onChange={handleChange} />
       <div className="container">
         {data.map((dest, i) => (
           <DestCard key={i} dest={dest} onClick={handleSelectDest} />

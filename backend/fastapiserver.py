@@ -25,7 +25,7 @@ def read_root():
     return "hello world"
 
 @app.get("/point/{pt}")
-def read_root_point(pt):
+def read_root_point(pt:int):
     return dictOfCitiesToEvents(pt)
 
 # python3 -u "/mnt/c/Users/John Paul/Desktop/TAMUHack24/TAMUHack-24-Repo/backend/fastapiserver.py"

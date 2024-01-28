@@ -82,9 +82,18 @@ def get_list_of_only_cities(points):
         output_dict['MileRequirement'] = document['MileRequirement']
 
         output_list.append(output_dict)
+
+    output_dict = set(output_dict.values())
+    seen = set()
+    output_set = set()
+
+    for item in output_dict:
+        if item not in seen:
+            seen.add(item)
+            output_set.add(item)
     
-    return output_list
+    return output_set
 
     
 if __name__ == "__main__" :
-    print(get_list_of_dict_events(1000))
+    print(get_list_of_only_cities(1000))

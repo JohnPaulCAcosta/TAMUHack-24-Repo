@@ -4,7 +4,7 @@ const DestCard = ({ dest, onClick }) => {
   const { Point, Poster, Location } = dest;
 
   const handleClick = () => {
-    onClick(dest);
+    onClick(Location);
   };
 
   return (

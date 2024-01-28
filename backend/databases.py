@@ -32,14 +32,16 @@ def get_list_of_dict_events(points):
     for document in result:
 
         output_dict = {}
+        output_dict['Location'] = document['Location']
         output_dict['EventName'] = document['EventName']
         output_dict['Description'] = document['Description']
         output_dict['Website'] = document['Website']
         output_dict['Image'] = document['Image']
+        output_dict['MileRequirement'] = document['MileRequirement']
 
         output_list.append(output_dict)
     
     return output_list
     
 if __name__ == "__main__" :
-    print(get_list_of_dict_events(300))
+    print(get_list_of_dict_events(1000))

@@ -23,9 +23,9 @@ app.add_middleware(
 def read_root():
     return "hello world"
 
-@app.get("/point")
-def read_root_point(points):
-    return get_list_of_dict_events(points)
+@app.get("/point/{pt}")
+def read_root_point(pt):
+    return get_list_of_dict_events(pt)
 
 # python3 -u "/mnt/c/Users/John Paul/Desktop/TAMUHack24/TAMUHack-24-Repo/backend/fastapiserver.py"
 
